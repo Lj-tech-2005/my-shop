@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CiShoppingCart } from "react-icons/ci";
-import { storecontext } from './context';
+import { storecontext } from './Context';
 
 export default function Header() {
     const { cart } = useContext(storecontext);

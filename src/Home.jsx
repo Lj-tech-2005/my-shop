@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { storecontext } from './components/context';
+import { storecontext } from './components/Context';
 
 export default function Product() {
     const { addtocart } = useContext(storecontext);

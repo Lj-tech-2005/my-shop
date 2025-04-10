@@ -2,7 +2,7 @@ import { Star, ShoppingCart, Truck, RefreshCcw } from "lucide-react";
 import { useEffect, useState,useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { storecontext } from "./components/context";
+import { storecontext } from "./components/Context";
 
 export default function ProductDetails() {
   const [product, SetProduct] = useState({});
