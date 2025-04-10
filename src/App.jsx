@@ -5,7 +5,7 @@ import Layout from './Layout'
 import ProductDetails from './ProductDetails'
 import Cart from './components/Cart'
 import Home from './Home'
-import AboutPage from './Aboutpage'
+import AboutPage from './AboutPage'
 import ContactPage from './ContactPage'
 
 export default function App() {
