@@ -3,9 +3,9 @@ import { ShoppingBag, Truck, DollarSign, ThumbsUp } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen mt-15 bg-green-50 text-gray-800 px-6 py-12">
+    <div className="min-h-screen mt-15 bg-pink-50 text-gray-800 px-6 py-12">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold text-green-900 mb-4">About Our Store</h1>
+        <h1 className="text-4xl font-bold text-pink-900 mb-4">About Our Store</h1>
         <p className="text-lg mb-8 max-w-3xl">
           Welcome to <span className="font-semibold">EcoSphere</span> — your trusted source for sustainable,
           eco-friendly products. We're committed to making it easier for everyone to shop
@@ -14,7 +14,7 @@ export default function AboutPage() {
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="bg-white shadow-md rounded-2xl p-6 flex items-start space-x-4">
-            <ShoppingBag className="text-green-600 w-6 h-6 mt-1" />
+            <ShoppingBag className="text-pink-600 w-6 h-6 mt-1" />
             <div>
               <h3 className="text-xl font-semibold">Eco-Friendly Products</h3>
               <p className="text-sm text-gray-600 mt-2">
@@ -25,7 +25,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-white shadow-md rounded-2xl p-6 flex items-start space-x-4">
-            <Truck className="text-green-600 w-6 h-6 mt-1" />
+            <Truck className="text-pink-600 w-6 h-6 mt-1" />
             <div>
               <h3 className="text-xl font-semibold">Fast, Green Shipping</h3>
               <p className="text-sm text-gray-600 mt-2">
@@ -36,7 +36,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-white shadow-md rounded-2xl p-6 flex items-start space-x-4">
-            <DollarSign className="text-green-600 w-6 h-6 mt-1" />
+            <DollarSign className="text-pink-600 w-6 h-6 mt-1" />
             <div>
               <h3 className="text-xl font-semibold">Affordable Sustainability</h3>
               <p className="text-sm text-gray-600 mt-2">
@@ -47,7 +47,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-white shadow-md rounded-2xl p-6 flex items-start space-x-4">
-            <ThumbsUp className="text-green-600 w-6 h-6 mt-1" />
+            <ThumbsUp className="text-pink-600 w-6 h-6 mt-1" />
             <div>
               <h3 className="text-xl font-semibold">Customer Satisfaction</h3>
               <p className="text-sm text-gray-600 mt-2">
@@ -59,14 +59,14 @@ export default function AboutPage() {
         </div>
 
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-green-800 mb-4">Shop with Purpose</h2>
+          <h2 className="text-2xl font-bold text-pink-800 mb-4">Shop with Purpose</h2>
           <p className="text-gray-700 mb-6 max-w-xl mx-auto">
             Join thousands of others who are making the switch to eco-conscious shopping.
             Discover products you love while doing good for the planet.
           </p>
           <a
             href="#"
-            className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full text-base"
+            className="inline-block bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full text-base"
           >
             Start Shopping
           </a>

@@ -97,120 +97,101 @@ export default function Product() {
 
 
 
-    
+
 
     const getPageClass = (i) => {
-        return `flex items-center justify-center px-3 cursor-pointer h-8 leading-tight border ${current === i
-                ? "bg-blue-400 text-white"
-                : "text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            }`;
+        return `px-4 ms-2 py-2 rounded-lg cursor-pointer border transition-all duration-300 ${
+            current === i
+                ? "bg-pink-500 text-white border-pink-500"
+                : "bg-white text-gray-600 border-gray-300 hover:bg-pink-100 hover:text-pink-600"
+        }`;
     };
 
-
-    const pagination = []
-
+    const pagination = [];
     for (let i = 0; i < totalpage; i++) {
-
         pagination.push(
-
             <li key={i} onClick={() => setcurrent(i)} className={getPageClass(i)}>
                 {i + 1}
             </li>
-
-        )
-
-
+        );
     }
 
 
 
 
     return (
-        <div className='w-full mt-18 '>
-            <div className='max-w-[1300px] p-4'>
-                <div className='grid gap-5 items-start grid-cols-12 '>
-                    <ul className='col-span-2 '>
-                        <Link to="/"><li className={`shadow ${categorieslug == null ? "bg-green-700 text-white" : ""}  cursor-pointer p-3`}>ALL</li></Link>
-                        {
-                            categories.map((cat, index) => {
-
-                                return (
-
-                                    <Link key={index} to={`/${cat.slug}`}> <li key={index} className={`w-full ${categorieslug == cat.slug ? "bg-green-700 text-white" : ""}  cursor-pointer p-3 mb-3 shadow`}>{cat.name}</li></Link>
-                                )
-
-                            })
-                        }
-                    </ul>
-
-
-                    <div className='grid col-span-10 p-4 gap-5 items-start'>
-
-
-
-                        <div className='grid  gap-5 items-start grid-cols-3 ' >
-                            {
-
-                                loading == true ?
-                                    [1, 2, 3, 4, 5, 6, 7, 8].map((d, i) => {
-
-                                        return (
-                                            <SkeletonCard key={i} />
-                                        )
-                                    }) :
-
-                                    allproduct.map((prod, index) => {
-
-                                        return (
-                                            <div className="max-w-sm  rounded-2xl overflow-hidden shadow-lg hover:scale-105 duration-100 bg-white p-5">
-                                                <Link key={index} to={`/productfulldetails/${prod.id}`}>
-                                                    <img
-                                                        className="w-full h-56 object-cover rounded-lg"
-                                                        src={prod.thumbnail}
-                                                        alt="Product"
-                                                    />
-                                                </Link>
-
-                                                <div className="py-4">
-                                                    <Link key={index} to={`/productfulldetails/${prod.id}`}>
-
-                                                        <h2 className="text-xl font-semibold text-gray-900">{prod.title}</h2>
-                                                        <p className="text-gray-600 mt-2">This is a short description of the product.</p>
-                                                    </Link>
-
-                                                    <div className="flex items-center justify-between mt-4">
-
-                                                        <span className="text-lg font-bold text-gray-900">$99.99</span>
-                                                        <button onClick={() => { addtocart(prod.id) }} className="bg-green-700 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                                                            Add to Cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        )
-
-
-                                    })
-
-                            }
-
+        <div className='max-w-[1360px] mx-auto mt-18 '>
+        <div className='max-w-[1300px] p-4'>
+          <div className='grid gap-5 items-start grid-cols-12 '>
+            <ul className='col-span-2 '>
+              <Link to="/">
+                <li className={`shadow ${categorieslug == null ? "bg-pink-500 text-white" : ""} cursor-pointer p-3`}>
+                  ALL
+                </li>
+              </Link>
+              {
+                categories.map((cat, index) => {
+                  return (
+                    <Link key={index} to={`/${cat.slug}`}>
+                      <li
+                        className={`w-full ${categorieslug == cat.slug ? "bg-pink-500 text-white" : ""} cursor-pointer p-3 mb-3 shadow`}
+                      >
+                        {cat.name}
+                      </li>
+                    </Link>
+                  );
+                })
+              }
+            </ul>
+      
+            <div className='grid col-span-10 p-4 gap-5 items-start'>
+              <div className='grid gap-5 items-start grid-cols-3'>
+                {
+                  loading == true ?
+                    [1, 2, 3, 4, 5, 6, 7, 8].map((d, i) => <SkeletonCard key={i} />)
+                    :
+                    allproduct.map((prod, index) => {
+                      return (
+                        <div key={index} className="max-w-sm rounded-2xl overflow-hidden shadow-lg hover:scale-105 duration-100 bg-white p-5">
+                          <Link to={`/productfulldetails/${prod.id}`}>
+                            <img
+                              className="w-full h-56 object-cover rounded-lg"
+                              src={prod.thumbnail}
+                              alt="Product"
+                            />
+                          </Link>
+      
+                          <div className="py-4">
+                            <Link to={`/productfulldetails/${prod.id}`}>
+                              <h2 className="text-xl font-semibold text-gray-900">{prod.title}</h2>
+                              <p className="text-gray-600 mt-2">This is a short description of the product.</p>
+                            </Link>
+      
+                            <div className="flex items-center justify-between mt-4">
+                              <span className="text-lg font-bold text-gray-900">$99.99</span>
+                              <button
+                                onClick={() => { addtocart(prod.id) }}
+                                className="bg-pink-500 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition"
+                              >
+                                Add to Cart
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                        <ul className="flex -space-x-px text-sm mt-17 justify-center">
-
-                            {pagination}
-                        </ul>
-
-
-
-                    </div>
-
-                </div>
-
+                      );
+                    })
+                }
+              </div>
+      
+              <ul className="flex -space-x-px text-sm mt-17 justify-center">
+                {pagination}
+              </ul>
             </div>
-
+          </div>
         </div>
+      </div>
+      
+
     )
 }
 
@@ -218,20 +199,13 @@ export default function Product() {
 
 const SkeletonCard = () => {
     return (
-        <div className="max-w-sm w-full p-4 rounded-lg shadow-md bg-white">
-            <div className="animate-pulse">
-                {/* Image Skeleton */}
-                <div className="bg-gray-300 h-48 w-full rounded-lg"></div>
-
-                {/* Text Skeleton */}
-                <div className="mt-4 space-y-3">
-                    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-                    <div className="h-4 bg-gray-300 rounded w-5/6"></div>
-                </div>
-
-                {/* Button Skeleton */}
-                <div className="mt-4 h-10 bg-gray-300 rounded-lg w-full"></div>
+        <div className="bg-white p-4 rounded-3xl shadow animate-pulse">
+            <div className="h-48 bg-rose-100 rounded-xl mb-4"></div>
+            <div className="space-y-3">
+                <div className="h-4 bg-rose-200 rounded w-3/4"></div>
+                <div className="h-4 bg-rose-200 rounded w-2/3"></div>
             </div>
+            <div className="h-10 bg-rose-200 rounded-xl mt-4"></div>
         </div>
     );
 };

@@ -27,10 +27,10 @@ export default function Product() {
     }, [current]);
 
     const getPageClass = (i) => {
-        return `px-4 py-2 rounded-md cursor-pointer border transition-all duration-300 ${
+        return `px-4 py-2 rounded-lg cursor-pointer border transition-all duration-300 ${
             current === i
-                ? "bg-green-600 text-white border-green-600"
-                : "bg-white text-gray-600 border-gray-300 hover:bg-green-100 hover:text-green-700"
+                ? "bg-pink-500 text-white border-pink-500"
+                : "bg-white text-gray-600 border-gray-300 hover:bg-pink-100 hover:text-pink-600"
         }`;
     };
 
@@ -46,34 +46,39 @@ export default function Product() {
     return (
         <>
             {/* Hero Banner */}
-            <section className="mt-20 mb-10">
-                <img src="1.jpg" alt="Promotional Banner" className="w-full object-cover rounded-xl max-h-[400px]" />
+            <section className="mt-22 max-w-[1360px] mx-auto mb-10">
+                <img src="2.jpg" alt="Promotional Banner" className="w-full object-cover rounded-xl shadow-2xl max-h-[400px]" />
             </section>
 
             {/* Products Section */}
-            <div className="w-full">
+            <div className="max-w-[1360px] mx-auto">
                 <div className="max-w-[1300px] mx-auto px-4">
                     <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         {loading
                             ? Array.from({ length: 12 }).map((_, i) => <SkeletonCard key={i} />)
                             : allproduct.map((prod, index) => (
-                                <div key={index} className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                                <div
+                                    key={index}
+                                    className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
+                                >
                                     <Link to={`/productfulldetails/${prod.id}`}>
                                         <img
                                             src={prod.thumbnail}
                                             alt={prod.title}
-                                            className="h-56 w-full object-cover"
+                                            className="h-56 w-full object-cover rounded-t-3xl"
                                         />
                                     </Link>
-                                    <div className="p-4">
+                                    <div className="p-4 space-y-3">
                                         <Link to={`/productfulldetails/${prod.id}`}>
-                                            <h2 className="text-lg font-semibold text-gray-800 hover:text-green-700">{prod.title}</h2>
+                                            <h2 className="text-lg font-semibold text-gray-800 hover:text-pink-600 transition-colors duration-200">
+                                                {prod.title}
+                                            </h2>
                                         </Link>
-                                        <div className="flex justify-between items-center mt-4">
-                                            <span className="text-xl font-bold text-green-700">${prod.price}</span>
+                                        <div className="flex justify-between items-center pt-2">
+                                            <span className="text-xl font-bold text-pink-600">${prod.price}</span>
                                             <button
                                                 onClick={() => addtocart(prod.id)}
-                                                className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition"
+                                                className="bg-pink-500 text-white px-4 cursor-pointer py-2 rounded-full hover:bg-pink-600 transition-all duration-300 shadow-md hover:shadow-lg"
                                             >
                                                 Add to Cart
                                             </button>
@@ -91,26 +96,27 @@ export default function Product() {
                 </div>
             </div>
 
-            <section className='relative'>
-                <img className='h-[400px] absolute right-0 top-[-400px]'  src="4.png" alt="" />
+            <section className="relative max-w-[1360px] mx-auto">
+                <img className="h-[433px] hidden lg:block absolute right-0 top-[-400px]" src="4.png" alt="" />
             </section>
         </>
     );
 }
 
-// Skeleton Card Placeholder
+// Skeleton Card Placeholder with styled pink tones
 const SkeletonCard = () => {
     return (
-        <div className="bg-white p-4 rounded-lg shadow animate-pulse">
-            <div className="h-48 bg-gray-300 rounded-lg mb-4"></div>
+        <div className="bg-white p-4 rounded-3xl shadow animate-pulse">
+            <div className="h-48 bg-rose-100 rounded-xl mb-4"></div>
             <div className="space-y-3">
-                <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-                <div className="h-4 bg-gray-300 rounded w-2/3"></div>
+                <div className="h-4 bg-rose-200 rounded w-3/4"></div>
+                <div className="h-4 bg-rose-200 rounded w-2/3"></div>
             </div>
-            <div className="h-10 bg-gray-300 rounded-lg mt-4"></div>
+            <div className="h-10 bg-rose-200 rounded-xl mt-4"></div>
         </div>
     );
 };
+
 
 
 
