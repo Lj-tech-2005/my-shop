@@ -4,7 +4,7 @@ import { FaFacebookSquare, FaInstagram, FaTwitterSquare, FaGithubSquare } from "
 export default function Footer() {
     return (
         <div className='bg-gradient-to-br mt-9 from-pink-50 to-rose-100 px-6 py-20 text-gray-800'>
-            <div className='max-w-[1240px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mx-auto'>
+            <div className='max-w-[1360px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mx-auto'>
 
                 <div className='flex flex-col gap-6 col-span-1 sm:col-span-2'>
                     <h1 className='text-3xl md:text-4xl font-extrabold text-pink-600'>

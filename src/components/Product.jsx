@@ -21,7 +21,7 @@ export default function Product() {
 
     const getcategories = () => {
 
-        axios.get('https:dummyjson.com/products/categories').then(
+      axios.get('https://dummyjson.com/products/categories').then(
             (response) => {
                 setcategories(response.data)
             }
@@ -53,7 +53,7 @@ export default function Product() {
 
             } else {
 
-                api = axios.get("https:dummyjson.com/products/category/" + categorieslug);
+              api = axios.get("https://dummyjson.com/products/category/" + categorieslug);
             }
 
             api.then(
@@ -122,8 +122,8 @@ export default function Product() {
     return (
         <div className='max-w-[1360px] mx-auto mt-18 '>
         <div className='max-w-[1300px] p-4'>
-          <div className='grid gap-5 items-start grid-cols-12 '>
-            <ul className='col-span-2 '>
+          <div className='grid gap-5 items-start   grid-cols-12 '>
+            <ul className='hidden md:block col-span-2 '>
               <Link to="/">
                 <li className={`shadow ${categorieslug == null ? "bg-pink-500 text-white" : ""} cursor-pointer p-3`}>
                   ALL
@@ -144,8 +144,28 @@ export default function Product() {
               }
             </ul>
       
-            <div className='grid col-span-10 p-4 gap-5 items-start'>
-              <div className='grid gap-5 items-start grid-cols-3'>
+            <div className='grid col-span-full  md:col-span-10 p-4 gap-5 items-start'>
+            <ul className=' md:hidden flex flex-wrap'>
+              <Link to="/">
+                <li className={`shadow ${categorieslug == null ? "bg-pink-500 text-white" : ""} cursor-pointer p-3`}>
+                  ALL
+                </li>
+              </Link>
+              {
+                categories.map((cat, index) => {
+                  return (
+                    <Link key={index} to={`/${cat.slug}`}>
+                      <li
+                        className={`w-full ${categorieslug == cat.slug ? "bg-pink-500 text-white" : ""} cursor-pointer p-3 mb-3 shadow`}
+                      >
+                        {cat.name}
+                      </li>
+                    </Link>
+                  );
+                })
+              }
+            </ul>
+              <div className='grid gap-5 items-start md:grid-cols-2 lg:grid-cols-3'>
                 {
                   loading == true ?
                     [1, 2, 3, 4, 5, 6, 7, 8].map((d, i) => <SkeletonCard key={i} />)
