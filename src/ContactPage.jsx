@@ -49,7 +49,7 @@ const ContactPage = () => {
 
 
       <div className='mt-9 w-full pb-5 '>
-        <iframe className='w-full h-[400px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.2836996142496!2d75.79272447468486!3d26.86272616223834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5eb3f62c46b%3A0x1520669008d3a150!2sWsCube%20Tech%20-%20Upskilling%20Bharat!5e0!3m2!1sen!2sin!4v1744262662830!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe className='w-full h-[400px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.2836996142496!2d75.79272447468486!3d26.86272616223834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5eb3f62c46b%3A0x1520669008d3a150!2sWsCube%20Tech%20-%20Upskilling%20Bharat!5e0!3m2!1sen!2sin!4v1744262662830!5m2!1sen!2sin" gloading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       </div>
 
