@@ -144,7 +144,7 @@ export default function Product() {
               }
             </ul>
       
-            <div className='grid col-span-full  md:col-span-10 p-4 gap-5 items-start'>
+            <div className='grid col-span-full  md:col-span-10 md:p-4 gap-5 items-start'>
             <ul className=' md:hidden flex flex-wrap'>
               <Link to="/">
                 <li className={`shadow ${categorieslug == null ? "bg-pink-500 text-white" : ""} cursor-pointer p-3`}>
